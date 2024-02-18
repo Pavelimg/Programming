@@ -1,38 +1,33 @@
 #include <iostream>
+#include <cmath>
 
 namespace N {
-    class GeometricalObject {
-    };
+    class NGon {
+    private:
 
-    class Square : GeometricalObject {
+        int n;
+        double side_length, inside_radius, outside_radius, angle;
+        const double PI = acos(-1.0);
     public:
-        int height{};
+        NGon(int sides, double length);
+        double get_area();
 
-        virtual int get_perimeter();
+        double get_perimeter();
 
-        virtual int get_area();
+        double get_outside_radius();
 
-        virtual float get_diagonal();
+        double get_inside_radius();
+
+        double get_angle();
+
+        int get_n();
+
+        void set_n(int new_n);
+
+        double get_side_length();
+
+        void set_side_length(double new_side_length);
+
+
     };
-
-    class Cube : Square {
-    public:
-        int get_perimeter();
-
-        int get_area();
-
-        float get_diagonal();
-    };
-
-    class Parallelepiped : Square {
-    public:
-        int wight{};
-
-        int get_perimeter();
-
-        int get_area();
-
-        float get_diagonal();
-    };
-
 }
